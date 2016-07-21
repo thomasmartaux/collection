@@ -19,9 +19,20 @@
 
  -->
 
- 
- <label>Recherche: <input ng-model="search.$"></label>
- 
+<div class="form-group row">
+    <label for="usr" class="col-sm-1">Recherche</label>
+    <div class="col-sm-6">
+        <input type="text" class="form-control" data-ng-model="search.$">
+    </div>
+</div>
+
+<div class="checkbox">
+    <label>
+        <input type="checkbox" data-ng-model="verifierImage">
+        Vérifier images ?
+    </label>
+</div>
+
 <br/>
 <div class="panel panel-default">
     <!-- Default panel contents -->
@@ -63,7 +74,7 @@
             <td>{{item.brand}}</td>
             <td>{{item.platform}}</td>
             <td>{{item.type}}</td>
-            <td><a ui-sref="edit({ itemId: item._id.$oid })"><span seb-tooltip item="{{item}}">{{item.name}}</span></a></td>
+            <td><a ui-sref="edit({ itemId: item._id.$oid })"><span seb-tooltip item="{{item}}"><span data-ng-if="verifierImage" data-ng-hide="isImage(item)" class="glyphicon glyphicon-warning-sign"></span>{{item.name}}</span></a></td>
             <td>{{item.players}}</td>
             <td>{{item.year}}</td>
         <!--    <td>{{item.reference}}</td>

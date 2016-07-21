@@ -11,7 +11,13 @@
                 <div class="form-group row">
                     <label for="usr" class="col-sm-1">Type</label>
                     <div class="col-sm-6">
-                        <input type="text" class="form-control" ng-model="item.type">
+                        <select class="form-control" ng-model="item.type">
+                            <option>game</option>
+                            <option>controller</option>
+                            <option>console</option>
+                            <option>mod</option>
+                            <option>accessory</option>
+                        </select>
                     </div>
                 </div>
 

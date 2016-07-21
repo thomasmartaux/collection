@@ -86,6 +86,13 @@ angular
 	        function ($scope, CollectionMongo, _) {
 				$("#hide-show-photos").bootstrapSwitch();
 
+				$scope.isImage = (item) => {
+					var request = new XMLHttpRequest();
+					request.open('HEAD', $scope.getItemImagePath(item), false);
+					request.send();
+					return request.status == 200;
+				}
+
 	        	$scope.getItemImagePath = function(item) {
 					return 'photos/' + item.brand + '/' + item.platform + '/' + item.type + '/' + item.reference + '.JPG';
 				}
