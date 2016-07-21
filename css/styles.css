@@ -1,0 +1,18 @@
+.glyphicon.green {
+    color: green;
+}
+
+.glyphicon.red {
+    color: red;
+}
+
+.glyphicon.black {
+    color: black;
+}
+
+tr.red {
+	background-color: #FFCCCC;
+}
+tr.red-soft {
+	background-color: #FFE6E6;
+}

@@ -1,0 +1,85 @@
+<h1 class="page-header">Liste</h1>
+
+<!-- 
+<div class="btn-group btn-group-justified" role="group" aria-label="...">
+    <div class="btn-group" role="group">
+        <button ng-model="hideShowPhotos" type="button" class="btn btn-default">Images</button>
+    </div>
+    <div class="btn-group" role="group">
+        <button type="button" class="btn btn-default">Middle</button>
+    </div>
+    <div class="btn-group" role="group">
+        <button type="button" class="btn btn-default">Right</button>
+    </div>
+</div>
+
+
+
+{{hideShowPhotos}}
+
+ -->
+
+ 
+ <label>Recherche: <input ng-model="search.$"></label>
+ 
+<br/>
+<div class="panel panel-default">
+    <!-- Default panel contents -->
+    <div class="panel-heading">Collection</div>
+
+
+
+    <!-- Table -->
+    <table class="table">
+        <thead>
+        <tr>
+            <th>#</th>
+            <th>Marque</th>
+            <th>Plateforme</th>
+            <th>Type</th>
+            <th>Nom</th>
+            <th>Joueur(s)</th>
+            <th>Année</th>
+            <!--<th>Référence</th>
+            <th>S/N</th>-->
+            <th>Date d'achat</th>
+            <th>Valeur d'achat</th>
+            <th>Valeur courante</th>
+<!--
+            <th>Commentaire</th>
+-->
+            <!--
+            <th>Photo</th>
+             -->
+            <th>Cote (eBay)</th>
+        </tr>
+        </thead>
+        <tbody>
+
+
+
+        <tr class="{{rowClass(item)}}" ng-repeat="item in items | filter:search:strict">
+            <td>{{$index + 1}}</td>
+            <td>{{item.brand}}</td>
+            <td>{{item.platform}}</td>
+            <td>{{item.type}}</td>
+            <td><a ui-sref="edit({ itemId: item._id.$oid })"><span seb-tooltip item="{{item}}">{{item.name}}</span></a></td>
+            <td>{{item.players}}</td>
+            <td>{{item.year}}</td>
+        <!--    <td>{{item.reference}}</td>
+            <td>{{item.serial}}</td>-->
+            <td>{{item.purchaseDate}}</td>
+            <td>{{item.purchasePrice}}</td>
+            <td>{{item.value}}</td>
+            <!--<td>{{item.comment}}</td>-->
+            <!--
+            <td><img width=160 src="{{getItemImagePath(item)}}"/></td>
+             -->
+            <td><a href="http://www.ebay.fr/sch/i.html?_sop=13&LH_Complete=1&LH_Sold=1&_osacat=0&_from=R40&_nkw={{getEBaySearchTerms(item)}}&_sacat=0&_sop=15">
+                <span aria-hidden="true" class="{{hasItemGainedClasses(item)}}"></span>
+                <span ng-if="item.purchasePrice">{{itemsGain(item)}}%</span>
+            </a></td>
+        </tr>
+        </tbody>
+    </table>
+</div>

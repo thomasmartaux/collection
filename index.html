@@ -1,0 +1,83 @@
+<!doctype html>
+<html ng-app="collectionApp" ng-controller="MainController">
+<head>
+    <meta charset="utf-8">
+    <title>{{title}}</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/bootstrap-switch.min.css">
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+</head>
+<body>
+
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">{{title}}</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li ui-sref-active="active"><a href="#">Accueil</a></li>
+                <li ui-sref-active="active"><a ui-sref="liste">Liste</a></li>
+                <li ui-sref-active="active"><a ui-sref="edit">Editer</a></li>
+                <li ui-sref-active="active"><a href="#">Statistiques</a></li>
+            </ul>
+
+            <div class="navbar-form navbar-right">
+                <div class="form-group">
+                    <div class="input-group">
+                        <span class="input-group-addon" id="basic-addon1">API key</span>
+                        <input type="text" class="form-control" aria-describedby="basic-addon1" data-ng-model="APIkey">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--/.navbar-collapse -->
+    </div>
+</nav>
+
+
+
+<!-- Main jumbotron for a primary marketing message or call to action -->
+<div class="jumbotron">
+    <div class="container">
+        <h1 data-toggle="tooltip" data-placement="right" title="Tooltip on right">Petit récapitulatif :</h1>
+
+        <ul>
+            <li><span>Valeur globale : {{collectionValue}}€</span></li>
+            <li><span>Nombre de marques : {{brandCount}}</span></li>
+            <li><span>Nombre d'objets : {{itemCount}}</span></li>
+            <li><span>Plus value : {{gain}}%</span></li>
+        </ul>
+    </div>
+</div>
+
+<div class="container">
+
+	<div ui-view></div>
+
+    <hr>
+
+    <footer>
+        <p>© Thomas MARTAUX 2016</p>
+    </footer>
+</div>
+<!-- /container -->
+
+<script src="libs/jquery-2.1.3.min.js"></script>
+<script src="libs/bootstrap.min.js"></script>
+<script src="libs/bootstrap-switch.min.js"></script>
+<script src="libs/lodash.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular-cookies.js"></script>
+<script src="libs/bootstrap.min.js"></script>
+<script src="libs/angular-resource.min.js"></script>
+<script src="libs/angular-ui-router.js"></script>
+<script src="directives.js"></script>
+<script src="services.js"></script>
+<script src="controllers.js"></script>
+<script src="application.js"></script>
+</body>
+</html>
